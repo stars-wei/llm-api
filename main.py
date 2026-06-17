@@ -7,9 +7,7 @@ client = OpenAI(
     base_url="https://api.deepseek.com"
 )
 
-
 question = input("请输入你的问题：")
-
 
 response = client.chat.completions.create(
     model="deepseek-v4-pro",
