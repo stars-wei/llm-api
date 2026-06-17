@@ -8,10 +8,13 @@ client = OpenAI(
 )
 
 
+question = input("请输入你的问题：")
+
+
 response = client.chat.completions.create(
     model="deepseek-v4-pro",
     messages=[
-        {"role": "user", "content": "请用一句话解释什么是 API"}
+        {"role": "user", "content": question}
     ]
 )
 
