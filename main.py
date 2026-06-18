@@ -6,14 +6,18 @@ client = OpenAI(
     api_key=os.environ.get("DEEPSEEK_API_KEY"),
     base_url="https://api.deepseek.com"
 )
+while True:
 
-question = input("请输入你的问题：")
+    question = input("请输入你的问题，输入q退出：")
 
-response = client.chat.completions.create(
-    model="deepseek-v4-pro",
-    messages=[
-        {"role": "user", "content": question}
-    ]
-)
+    if question == "q":
+        break
 
-print(response.choices[0].message.content)
+    response = client.chat.completions.create(
+        model="deepseek-v4-pro",
+        messages=[
+            {"role": "user", "content": question}
+        ]
+    )
+
+    print(response.choices[0].message.content)
