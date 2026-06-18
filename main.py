@@ -16,6 +16,7 @@ while True:
     response = client.chat.completions.create(
         model="deepseek-v4-pro",
         messages=[
+            {"role": "system", "content": "你是一个简洁、耐心的编程学习助手"},
             {"role": "user", "content": question}
         ]
     )
