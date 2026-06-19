@@ -22,3 +22,8 @@ while True:
     )
 
     print(response.choices[0].message.content)
+
+    print("\n本次调用 token 用量")
+    print("输入 token：", response.usage.prompt_tokens)
+    print("输出 token：", response.usage.completion_tokens)
+    print("总计 token：", response.usage.total_tokens)
